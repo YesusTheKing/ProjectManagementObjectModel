@@ -9,7 +9,7 @@ class User:
         self.email_address = None
         self.status = None
     
-    def perform_task(self,task):
+    def perform_task(self,task) -> bool:
         pass
     def __str__(self):
         pass
@@ -20,7 +20,7 @@ class Resource:
         self._resource_id = None
         self.resource_name = None
     
-    def utilize(self):
+    def utilize(self) -> None:
         pass
     def __str__(self):
         pass
@@ -31,7 +31,7 @@ class Schedule:
         self.enddate = None
         self.duration = None
     
-    def update_duration(self,startdate,enddate):
+    def update_duration(self,startdate,enddate) -> None:
         pass
     def __str__(self):
         pass
@@ -47,17 +47,17 @@ class Task:
         self.successor:Task = None
         self.is_completed:bool = None
     
-    def operation(self):
+    def operation(self) -> bool:
         pass
-    def update_resource(self,res:Resource):
+    def update_resource(self,res:Resource) -> None:
         pass
-    def update_taskname(self,name:str):
+    def update_taskname(self,name:str) -> None:
         pass
-    def update_schedule(self,startdate,enddate):
+    def update_schedule(self,startdate,enddate) -> None:
         pass
-    def update_predessor(self,task):
+    def update_predessor(self,task) -> None:
         pass
-    def update_successor(self,task):
+    def update_successor(self,task) -> None:
         pass
     def __str__(self):
         pass
