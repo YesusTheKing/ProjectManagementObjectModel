@@ -11,6 +11,8 @@ class User:
     
     def perform_task(self,task):
         pass
+    def __str__(self):
+        pass
 
 class Resource:
     def __init__(self):
@@ -20,6 +22,8 @@ class Resource:
     
     def utilize(self):
         pass
+    def __str__(self):
+        pass
 
 class Schedule:
     def __init__(self):
@@ -28,6 +32,8 @@ class Schedule:
         self.duration = None
     
     def update_duration(self,startdate,enddate):
+        pass
+    def __str__(self):
         pass
 
 class Task:
@@ -53,15 +59,22 @@ class Task:
         pass
     def update_successor(self,task):
         pass
+    def __str__(self):
+        pass
 
-"""
-class Project(IProject):
+class Project:
     
     def __init__(self,*args):
-        self.__tasks: list[ITask] = []
-        self.__owner: IUser = None
+        self.tasks: list[Task] = []
+        self.owner: User = None
         self.__pid: int = None
-        self.__projectname:str = None
+        self.projectname:str = None
+    
+    def update_projectname(self) -> None:
+        pass
+    
+    def update_owner(self) -> None:
+        pass
     
     #add task to project
     def add_task(self,task:ITask) -> None:
@@ -69,6 +82,12 @@ class Project(IProject):
     
     #create task and add to the project
     def create_task(self,**kwargs) -> None:
+        pass
+
+    def delete_task(self,task) -> None:
+        pass
+
+    def do_task(self,task) -> bool:
         pass
     
     #return all the tasks of project
@@ -83,31 +102,13 @@ class Project(IProject):
         pass
 
 
-class Task(ITask):
-    def __init__(self):
-        self._taskid:int = None
-        self._taskname:str = None
-        self._taskduration:int = None
-        self._resource:IUser = None
-        self._predessor:ITask = None
-        self._successor:ITask = None
-    
-    def predessor(self) -> ITask:
-        return self.predessor
-    
-    def successor(self) -> ITask:
-        return self.successor
-    
-    def __str__(self):
-        pass
-
 class Application(object):
     
     #initialize the application object with empty projects and users
     def __init__(self):
-        self.__projects =list[IProject]
-        self.__admin_users = list[IUser]
-        self.__normal_users = list[IUser]
+        self.projects :list[Project] = None
+        self.users:list[User] = None
+        self.resource:list[Resource] = None
     
     def add_project(self,project:IProject) -> None:
         pass
@@ -115,7 +116,7 @@ class Application(object):
     def add_user(self,user:IUser) -> None:
         pass
     
-    def add_admin(self,user:IUser) -> None:
+    def add_resource(self,user:Resource) -> None:
         pass
 
     def can_complete_project(self,project:Project) -> bool:
@@ -123,4 +124,3 @@ class Application(object):
 
     def __str__(self):
         pass
-"""
