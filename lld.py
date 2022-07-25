@@ -9,7 +9,7 @@ class User:
         self.email_address = None
         self.status = None
     
-    def perform_task(self,task:Task):
+    def perform_task(self,task):
         pass
 
 class Resource:
@@ -49,9 +49,9 @@ class Task:
         pass
     def update_schedule(self,startdate,enddate):
         pass
-    def update_predessor(self,task:Task):
+    def update_predessor(self,task):
         pass
-    def update_successor(self,task:Task):
+    def update_successor(self,task):
         pass
 
 """
