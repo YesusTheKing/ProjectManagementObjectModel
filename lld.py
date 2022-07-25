@@ -77,7 +77,7 @@ class Project:
         pass
     
     #add task to project
-    def add_task(self,task:ITask) -> None:
+    def add_task(self,task:Task) -> None:
         pass
     
     #create task and add to the project
@@ -91,7 +91,7 @@ class Project:
         pass
     
     #return all the tasks of project
-    def return_tasks(self) -> list[ITask]:
+    def return_tasks(self) -> list[Task]:
         pass
     
     #function to check whether the project can completed within target date
@@ -110,10 +110,10 @@ class Application(object):
         self.users:list[User] = None
         self.resource:list[Resource] = None
     
-    def add_project(self,project:IProject) -> None:
+    def add_project(self,project:Project) -> None:
         pass
     
-    def add_user(self,user:IUser) -> None:
+    def add_user(self,user:User) -> None:
         pass
     
     def add_resource(self,user:Resource) -> None:
